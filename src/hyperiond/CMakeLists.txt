@@ -50,7 +50,7 @@ if (ENABLE_X11)
 	target_link_libraries(hyperiond	x11-grabber	)
 endif ()
 
-qt5_use_modules(hyperiond Core Gui Network Widgets)
+target_link_libraries(hyperiond Qt5::Core Qt5::Gui Qt5::Network Qt5::Widgets)
 
 install ( TARGETS hyperiond DESTINATION "share/hyperion/bin/" COMPONENT "${PLATFORM}" )
 install ( DIRECTORY ${CMAKE_SOURCE_DIR}/bin/service DESTINATION "share/hyperion/" COMPONENT  "${PLATFORM}" )
